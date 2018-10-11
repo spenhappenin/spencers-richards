@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import About from './About';
+import Contact from './Contact';
+import Home from './Home';
 import Navbar from './Navbar';
 import NoMatch from './NoMatch';
 import Sidebar from './Sidebar';
+import Skills from './Skills';
+import styled from 'styled-components';
 import { Route, Switch } from 'react-router-dom';
 import '../App.css';
 
@@ -34,6 +38,10 @@ class App extends Component {
         <Navbar toggleSidebar={this.toggleSidebar} windowWidth={windowWidth} />
         { sidebar && windowWidth < 550 ? <Sidebar sidebar={this.toggleSidebar} /> : null }
         <Switch>
+          <Route exact path='/' render={ props => <Home windowWidth={windowWidth} mobile={windowWidth < 961} /> } />
+          <Route exact path='/about' render={ props => <About mobile={windowWidth < 961} /> } />
+          <Route exact path='/contact' render={ props => <Contact mobile={windowWidth < 961} /> } />
+          <Route exact path='/skills' render={ props => <Skills mobile={windowWidth < 961} /> } />
           <Route component={NoMatch} />
         </Switch>
       </AppContainer>
