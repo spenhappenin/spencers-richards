@@ -4,6 +4,7 @@ import Contact from './Contact';
 import Home from './Home';
 import Navbar from './Navbar';
 import NoMatch from './NoMatch';
+import Projects from './Projects';
 import Sidebar from './Sidebar';
 import Skills from './Skills';
 import styled from 'styled-components';
@@ -42,6 +43,7 @@ class App extends Component {
           <Route exact path='/about' render={ props => <About mobile={windowWidth < 961} /> } />
           <Route exact path='/contact' render={ props => <Contact mobile={windowWidth < 961} /> } />
           <Route exact path='/skills' render={ props => <Skills mobile={windowWidth < 961} /> } />
+          <Route exact path='/projects' render={ props => <Projects mobile={windowWidth < 961} /> } />
           <Route component={NoMatch} />
         </Switch>
       </AppContainer>
