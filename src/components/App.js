@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import About from './About';
+import BountyBuilder from './projects/BountyBuilder';
 import Contact from './Contact';
+import HeatherOlsenArt from './projects/HeatherOlsenArt';
 import Home from './Home';
+import HoopTour from './projects/HoopTour';
+import Modcom from './projects/Modcom';
 import Navbar from './Navbar';
 import NoMatch from './NoMatch';
+import Portal from './projects/Portal';
 import Projects from './Projects';
+import Pug from './projects/Pug';
 import Sidebar from './Sidebar';
 import Skills from './Skills';
 import styled from 'styled-components';
@@ -44,6 +50,12 @@ class App extends Component {
           <Route exact path='/contact' render={ props => <Contact mobile={windowWidth < 961} /> } />
           <Route exact path='/skills' render={ props => <Skills mobile={windowWidth < 961} /> } />
           <Route exact path='/projects' render={ props => <Projects mobile={windowWidth < 961} /> } />
+          <Route exact path='/projects/heather-olsen-art' render={ props => <HeatherOlsenArt mobile={windowWidth < 961} {...props} /> } />
+          <Route exact path='/projects/bounty-builder' render={ props => <BountyBuilder mobile={windowWidth < 961} {...props} /> } />
+          <Route exact path='/projects/modcom' render={ props => <Modcom mobile={windowWidth < 961} {...props} /> } />
+          <Route exact path='/projects/pug' render={ props => <Pug mobile={windowWidth < 961} {...props} /> } />
+          <Route exact path='/projects/hoop-tour-usa' render={ props => <HoopTour mobile={windowWidth < 961} {...props} /> } />
+          <Route exact path='/projects/portal' render={ props => <Portal mobile={windowWidth < 961}  {...props} />} />
           <Route component={NoMatch} />
         </Switch>
       </AppContainer>
