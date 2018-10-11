@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import NoMatch from './NoMatch';
+import Sidebar from './Sidebar';
 import { Route, Switch } from 'react-router-dom';
 import '../App.css';
 
@@ -31,6 +32,7 @@ class App extends Component {
     return (
       <AppContainer>
         <Navbar toggleSidebar={this.toggleSidebar} windowWidth={windowWidth} />
+        { sidebar && windowWidth < 550 ? <Sidebar sidebar={this.toggleSidebar} /> : null }
         <Switch>
           <Route component={NoMatch} />
         </Switch>
