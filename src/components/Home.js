@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import logo from '../images/logo/s-blue.png';
 import { Container, Header } from '../styles/shared';
 
 class Home extends React.Component {
@@ -18,9 +19,9 @@ class Home extends React.Component {
         <br />
         <Header mobile={mobile}>Cat Lover</Header>
         <br />
-        <LogoContainer>
-          <MainIcon mobile={mobile} />
-        </LogoContainer>
+        {/* <LogoContainer>
+          <MainIcon src={logo} mobile={mobile} />
+        </LogoContainer> */}
       </Container>
     );
   };
@@ -38,8 +39,12 @@ const LogoContainer = styled.div`
 const MainIcon = styled.div`
   height: ${ props => props.mobile ? '280px' : '380px'};
   width: ${ props => props.mobile ? '280px' : '380px'};
-  background: white;
-  transform: rotate(77deg);
+  /* background: white; */
+  background: ${ props => `url(${props.src})` };
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* transform: rotate(77deg); */
+  transform: rotate(-15deg);
 `;
 
 export default Home;

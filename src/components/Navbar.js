@@ -2,7 +2,8 @@ import React, { Fragment } from 'react';
 import NavItem from './NavItem';
 import styled from 'styled-components';
 import { withRouter, } from 'react-router-dom';
-import logo from '../images/srlogo-white.png';
+// import logo from '../images/srlogo-white.png';
+import logo from '../images/logo/s-blue.png';
 
 // ---  default  ---
 import aboutDefault from '../images/about-default.svg';
@@ -66,15 +67,14 @@ class Navbar extends React.Component {
         <LogoContainer>
           <Logo src={logo} />
         </LogoContainer>
-
         {
           windowWidth > 550 ?
             <Fragment>
               <ItemsContainer>
-                {this.renderItems()}
+                { this.renderItems() }
               </ItemsContainer>
               <SocialContainer>
-                {this.renderSocials()}
+                { this.renderSocials() }
               </SocialContainer>
             </Fragment>
             :

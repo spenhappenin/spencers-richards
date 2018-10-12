@@ -2,12 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
+import ScrollWrapper from "./components/ScrollWrapper";
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <ScrollWrapper>
+      <App />
+    </ScrollWrapper>
   </BrowserRouter>,
   document.getElementById('root')
 );
